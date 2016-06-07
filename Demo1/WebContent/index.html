@@ -4,18 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/Webservices.js"></script>
 </head>
 
 <script type="text/javascript">
 //ajax调用rest
 //url:http://localhost:8080/Demo1/service/sinaRest/rest&page=1&count=10
-function xxx() {
-	
+function callData() {
+	WebServices.callAPIFunction("", function(result){
+		alert(JSON.stringify(result));
+	});
 }
 	
 </script>
 <body>
+
+	<input type="button" onclick="callData()" value="button">
 	<!-- bootstrap分页 -->
 	<ul class="pagination">
 		<li><a href="#">&laquo;</a></li>
@@ -25,6 +32,5 @@ function xxx() {
 		<li><a href="#">4</a></li>
 		<li><a href="#">&raquo;</a></li>
 	</ul>
-	
 </body>
 </html>
